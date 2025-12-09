@@ -5,15 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register - Morris App</title>
     <link rel="stylesheet" href="style.css">
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js"></script>
+    <script src="firebase.js"></script>
+    <script src="app.js"></script>
 </head>
 <body>
     <main class="container">
         <h2>Create Account</h2>
-        <input id="regEmail" type="email" placeholder="Email">
-        <input id="regPassword" type="password" placeholder="Password">
-        <button onclick="registerUser()">Register</button>
-    </main>
 
-    <script src="app.js"></script>
+        <input type="email" id="regEmail" placeholder="Email">
+        <input type="password" id="regPassword" placeholder="Password">
+
+        <button class="btn" onclick="registerUser()">Register</button>
+    </main>
 </body>
 </html>

@@ -2,7 +2,7 @@
     --navy: #1A2740;
     --sky: #4FA3FF;
     --text: #2E2E2E;
-    --bg: #ffffff;
+    --bg: #FFFFFF;
     font-family: 'Poppins', system-ui, Arial, sans-serif;
 }
 
@@ -17,67 +17,46 @@ body {
 
 .container {
     text-align: center;
-    padding: 32px;
+    padding: 40px 30px;
     background: var(--bg);
-    border-radius: 10px;
-    box-shadow: 0 6px 24px rgba(10,10,30,0.06);
-    max-width: 400px;
+    border-radius: 12px;
+    box-shadow: 0 6px 24px rgba(10,10,30,0.08);
+    max-width: 500px;
     width: 90%;
 }
 
 h1, h2 {
-    color: var(--navy);
-    margin-bottom: 24px;
+    margin-bottom: 20px;
 }
 
 input {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border-radius: 4px; /* slightly rounded for neatness */
+    width: 90%;
+    padding: 12px 15px;
+    margin: 12px 0;
+    border-radius: 8px;
     border: 1px solid #ccc;
     font-size: 16px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-button {
-    width: 100%; /* full width inside container */
-    padding: 14px;
-    margin: 12px 0; /* spacing between buttons */
+button.btn, a.btn {
+    display: block;
+    width: 60%;
+    padding: 12px;
+    margin: 15px auto;
     border: none;
-    border-radius: 2px; /* almost rectangular */
-    background: var(--navy);
+    border-radius: 10px;
+    background-color: var(--navy);
     color: #fff;
-    font-size: 16px;
+    font-size: 18px;
     cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: background 0.3s;
 }
 
-    button:hover {
-        background: var(--sky);
+    button.btn:hover, a.btn:hover {
+        background-color: var(--sky);
     }
-
-.links {
-    display: flex;
-    flex-direction: column; /* stack vertically */
-    gap: 12px; /* spacing between links/buttons */
-    margin-top: 20px;
-}
-
-    .links a {
-        display: block;
-        padding: 12px 0;
-        background: var(--navy);
-        color: white;
-        text-decoration: none;
-        font-weight: 600;
-        border-radius: 2px; /* rectangular look */
-        text-align: center;
-    }
-
-        .links a:hover {
-            background: var(--sky);
-        }
-
-p {
-    margin-top: 16px;
-    font-size: 14px;
-}

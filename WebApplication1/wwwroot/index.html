@@ -5,18 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Morris App</title>
     <link rel="stylesheet" href="style.css">
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js"></script>
+    <script src="firebase.js"></script>
+    <script src="app.js"></script>
 </head>
 <body>
     <main class="container">
         <h1>Welcome to Morris App</h1>
-        <p>A simple web app with login and register.</p>
+        <p>A simple web app with login, register, and dashboard.</p>
 
         <div class="links">
-            <a href="login.html">Login</a>
-            <a href="register.html">Register</a>
+            <a href="login.html" class="btn">Login</a>
+            <a href="register.html" class="btn">Register</a>
         </div>
     </main>
-
-    <script src="app.js"></script>
 </body>
 </html>

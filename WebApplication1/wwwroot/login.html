@@ -5,15 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Morris App</title>
     <link rel="stylesheet" href="style.css">
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js"></script>
+    <script src="firebase.js"></script>
+    <script src="app.js"></script>
 </head>
 <body>
     <main class="container">
         <h2>Login</h2>
-        <input id="loginEmail" type="email" placeholder="Email">
-        <input id="loginPassword" type="password" placeholder="Password">
-        <button onclick="loginUser()">Login</button>
-    </main>
 
-    <script src="app.js"></script>
+        <input type="email" id="loginEmail" placeholder="Email">
+        <input type="password" id="loginPassword" placeholder="Password">
+
+        <button class="btn" onclick="loginUser()">Login</button>
+    </main>
 </body>
 </html>
