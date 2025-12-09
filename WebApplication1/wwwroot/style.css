@@ -27,45 +27,55 @@ body {
 
 h1, h2 {
     color: var(--navy);
+    margin-bottom: 24px;
 }
 
 input {
-    width: 90%;
-    padding: 10px;
-    margin: 8px 0;
-    border-radius: 6px;
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 4px; /* slightly rounded for neatness */
     border: 1px solid #ccc;
     font-size: 16px;
 }
 
 button {
-    padding: 10px 20px;
+    width: 100%; /* full width inside container */
+    padding: 14px;
+    margin: 12px 0; /* spacing between buttons */
     border: none;
-    border-radius: 8px;
+    border-radius: 2px; /* almost rectangular */
     background: var(--navy);
     color: #fff;
     font-size: 16px;
     cursor: pointer;
-    margin-top: 12px;
 }
 
     button:hover {
         background: var(--sky);
     }
 
-.links a, p a {
-    color: var(--sky);
-    text-decoration: none;
-    font-weight: 600;
-}
-
-    .links a:hover, p a:hover {
-        text-decoration: underline;
-    }
-
 .links {
+    display: flex;
+    flex-direction: column; /* stack vertically */
+    gap: 12px; /* spacing between links/buttons */
     margin-top: 20px;
 }
+
+    .links a {
+        display: block;
+        padding: 12px 0;
+        background: var(--navy);
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        border-radius: 2px; /* rectangular look */
+        text-align: center;
+    }
+
+        .links a:hover {
+            background: var(--sky);
+        }
 
 p {
     margin-top: 16px;
