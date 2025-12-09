@@ -9,10 +9,20 @@
 <body>
     <main class="container">
         <h1>Welcome to Your Dashboard!</h1>
-        <p>You are now logged in.</p>
+        <p id="userEmail">You are logged in as: </p>
         <div class="links">
-            <a href="index.html">Logout</a>
+            <button onclick="logoutUser()">Logout</button>
         </div>
     </main>
+
+    <script src="app.js"></script>
+    <script>
+      const email = localStorage.getItem('userEmail');
+      if(email) {
+          document.getElementById('userEmail').innerText = `You are logged in as: ${email}`;
+      } else {
+          window.location.href = 'index.html'; // redirect if not logged in
+      }
+    </script>
 </body>
 </html>
