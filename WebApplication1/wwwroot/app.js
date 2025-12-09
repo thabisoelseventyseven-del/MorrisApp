@@ -1,4 +1,4 @@
-﻿// Register a new user
+﻿// REGISTER
 function registerUser() {
     const email = document.getElementById('regEmail').value;
     const password = document.getElementById('regPassword').value;
@@ -8,40 +8,49 @@ function registerUser() {
         return;
     }
 
-    // Save user in localStorage
-    localStorage.setItem('userEmail', email);
-    localStorage.setItem('userPassword', password);
-
-    alert(`Registered successfully!\nEmail: ${email}`);
-
-    // Redirect to dashboard
-    window.location.href = 'dashboard.html';
+    auth.createUserWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+            alert(`Registered successfully: ${email}`);
+            window.location.href = 'dashboard.html';
+        })
+        .catch((error) => {
+            alert(error.message);
+        });
 }
 
-// Login an existing user
+// LOGIN
 function loginUser() {
     const email = document.getElementById('loginEmail').value;
     const password = document.getElementById('loginPassword').value;
-
-    const savedEmail = localStorage.getItem('userEmail');
-    const savedPassword = localStorage.getItem('userPassword');
 
     if (!email || !password) {
         alert('Please enter email and password.');
         return;
     }
 
-    if (email === savedEmail && password === savedPassword) {
-        alert(`Logged in successfully!\nEmail: ${email}`);
-        window.location.href = 'dashboard.html';
-    } else {
-        alert('Invalid email or password.');
-    }
+    auth.signInWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+            alert(`Logged in as: ${email}`);
+            window.location.href = 'dashboard.html';
+        })
+        .catch((error) => {
+            alert(error.message);
+        });
 }
 
-// Logout user
+// LOGOUT
 function logoutUser() {
-    localStorage.removeItem('userEmail');
-    localStorage.removeItem('userPassword');
-    window.location.href = 'index.html';
+    auth.signOut().then(() => {
+        window.location.href = 'index.html';
+    });
 }
+
+// CHECK AUTH STATE
+auth.onAuthStateChanged(user => {
+    if (user && window.location.pathname.endsWith('dashboard.html')) {
+        document.getElementById('userEmail').innerText = `You are logged in as: ${user.email}`;
+    }
+    else if (!user && window.location.pathname.endsWith('dashboard.html')) {
+        window.location.href = 'index.html';
+    }
+});
